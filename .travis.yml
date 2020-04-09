@@ -8,7 +8,7 @@ before_install:
 script:
  - docker run agremond/react-test npm test -- --coverage
 
-after_sucess:
+after_success:
  - docker build -t agremond0/multi-client ./client
  - docker build -t agremond0/multi-nginx ./nginx
  - docker build -t agremond0/multi-server ./server
