@@ -9,18 +9,18 @@ script:
  - docker run agremond/react-test npm test -- --coverage
 
 after_sucess:
- - docker build -t agremond/multi-client ./client
- - docker build -t agremond/multi-nginx ./nginx
- - docker build -t agremond/multi-server ./server
- - docker build -t agremond/multi-worker ./worker
+ - docker build -t agremond0/multi-client ./client
+ - docker build -t agremond0/multi-nginx ./nginx
+ - docker build -t agremond0/multi-server ./server
+ - docker build -t agremond0/multi-worker ./worker
 #Login into docker CLI
 
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 #Take those images and push them to docker hub
 
- - docker push agremond/multi-client
- - docker push agremond/multi-nginx
- - docker push agremond/multi-server
- - docker push agremond/multi-worker
+ - docker push agremond0/multi-client
+ - docker push agremond0/multi-nginx
+ - docker push agremond0/multi-server
+ - docker push agremond0/multi-worker
 
