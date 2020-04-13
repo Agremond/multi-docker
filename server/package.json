@@ -9,6 +9,7 @@
   },
   "scripts": {
     "dev": "nodemon",
+    "build": "react-scripts build",
     "start": "node index.js"
   }
 }

@@ -5,6 +5,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "build": "react-scipts build",
     "dev": "nodemon"
   }
 }
