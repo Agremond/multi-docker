@@ -9,6 +9,7 @@ script:
  - docker run agremond0/react-test npm test -- --coverage
 
 after_success:
+ - docker build -t agremond0/multi-client ./client
  - docker build -t agremond0/multi-nginx ./nginx
  - docker build -t agremond0/multi-server ./server
  - docker build -t agremond0/multi-worker ./worker
@@ -18,6 +19,7 @@ after_success:
 
 #Take those images and push them to docker hub
 
+ - docker push agremond0/multi-client
  - docker push agremond0/multi-nginx
  - docker push agremond0/multi-server
  - docker push agremond0/multi-worker
